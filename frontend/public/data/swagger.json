@@ -1,0 +1,523 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "PokéAPI QA Collection",
+    "description": "Auto-generated OpenAPI documentation from Bruno test collections.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "QA Framework",
+      "url": "https://github.com/lrbg/frameAPIGlobal"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://pokeapi.co/api/v2",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Pokemon",
+      "description": "pokemon resource endpoints"
+    },
+    {
+      "name": "Berry",
+      "description": "berry resource endpoints"
+    },
+    {
+      "name": "Item",
+      "description": "item resource endpoints"
+    },
+    {
+      "name": "Move",
+      "description": "move resource endpoints"
+    },
+    {
+      "name": "Type",
+      "description": "type resource endpoints"
+    },
+    {
+      "name": "Ability",
+      "description": "ability resource endpoints"
+    }
+  ],
+  "paths": {
+    "/pokemon/{pokemonName}": {
+      "get": {
+        "tags": [
+          "Pokemon"
+        ],
+        "summary": "Get Pokemon by Name",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.id: isDefined`\n- `res.body.name: isDefined`\n- `res.body.abilities: isDefined`\n- `res.body.types: isDefined`",
+        "operationId": "get_pokemon_get_pokemon",
+        "parameters": [
+          {
+            "name": "pokemonName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "pokemonName identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/pokemon": {
+      "get": {
+        "tags": [
+          "Pokemon"
+        ],
+        "summary": "List Pokemon",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.count: isDefined`\n- `res.body.results: isDefined`",
+        "operationId": "get_pokemon_list_pokemon",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "description": "Number of results"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            },
+            "description": "Pagination offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/berry/{berryName}": {
+      "get": {
+        "tags": [
+          "Berry"
+        ],
+        "summary": "Get Berry by Name",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.id: isDefined`\n- `res.body.name: isDefined`\n- `res.body.growth_time: isDefined`",
+        "operationId": "get_berry_get_berry",
+        "parameters": [
+          {
+            "name": "berryName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "berryName identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/berry": {
+      "get": {
+        "tags": [
+          "Berry"
+        ],
+        "summary": "List Berries",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.count: isDefined`\n- `res.body.results: isDefined`",
+        "operationId": "get_berry_list_berry",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "description": "Number of results"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            },
+            "description": "Pagination offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/item/{itemName}": {
+      "get": {
+        "tags": [
+          "Item"
+        ],
+        "summary": "Get Item by Name",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.id: isDefined`\n- `res.body.name: isDefined`\n- `res.body.cost: isDefined`",
+        "operationId": "get_item_get_item",
+        "parameters": [
+          {
+            "name": "itemName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "itemName identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/item": {
+      "get": {
+        "tags": [
+          "Item"
+        ],
+        "summary": "List Items",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.count: isDefined`\n- `res.body.results: isDefined`",
+        "operationId": "get_item_list_item",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "description": "Number of results"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            },
+            "description": "Pagination offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/move/{moveName}": {
+      "get": {
+        "tags": [
+          "Move"
+        ],
+        "summary": "Get Move by Name",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.id: isDefined`\n- `res.body.name: isDefined`\n- `res.body.type: isDefined`",
+        "operationId": "get_move_get_move",
+        "parameters": [
+          {
+            "name": "moveName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "moveName identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/move": {
+      "get": {
+        "tags": [
+          "Move"
+        ],
+        "summary": "List Moves",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.count: isDefined`\n- `res.body.results: isDefined`",
+        "operationId": "get_move_list_move",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "description": "Number of results"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            },
+            "description": "Pagination offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/type/{typeName}": {
+      "get": {
+        "tags": [
+          "Type"
+        ],
+        "summary": "Get Type by Name",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.id: isDefined`\n- `res.body.name: isDefined`\n- `res.body.damage_relations: isDefined`",
+        "operationId": "get_type_get_type",
+        "parameters": [
+          {
+            "name": "typeName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "typeName identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/type": {
+      "get": {
+        "tags": [
+          "Type"
+        ],
+        "summary": "List Types",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.count: isDefined`\n- `res.body.results: isDefined`",
+        "operationId": "get_type_list_type",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/ability/{abilityName}": {
+      "get": {
+        "tags": [
+          "Ability"
+        ],
+        "summary": "Get Ability by Name",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.id: isDefined`\n- `res.body.name: isDefined`\n- `res.body.effect_entries: isDefined`",
+        "operationId": "get_ability_get_ability",
+        "parameters": [
+          {
+            "name": "abilityName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "abilityName identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    },
+    "/ability": {
+      "get": {
+        "tags": [
+          "Ability"
+        ],
+        "summary": "List Abilities",
+        "description": "Test Assertions:\n- `res.status: eq 200`\n- `res.body.count: isDefined`\n- `res.body.results: isDefined`",
+        "operationId": "get_ability_list_ability",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "description": "Number of results"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            },
+            "description": "Pagination offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        }
+      }
+    }
+  }
+}

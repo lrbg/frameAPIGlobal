@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Express API server for QA Framework",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "cd ../collections/pokeapi && bru run --env Prod --reporter-json ../backend/results/latest.json"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@usebruno/cli": "^1.30.0",
+    "nodemon": "^3.0.3"
+  }
+}

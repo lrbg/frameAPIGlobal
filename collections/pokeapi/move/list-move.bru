@@ -1,0 +1,47 @@
+meta {
+  name: List Moves
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/move?limit=20&offset=0
+  body: none
+  auth: none
+}
+
+tests {
+  test("Status 200 - Successful response", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Response has count", function() {
+    expect(res.getBody()).to.have.property('count');
+  });
+
+  test("Response has results array", function() {
+    expect(res.getBody()).to.have.property('results');
+    expect(res.getBody().results).to.be.an('array');
+  });
+
+  test("Results not empty", function() {
+    expect(res.getBody().results.length).to.be.greaterThan(0);
+  });
+
+  test("Each move has name and url", function() {
+    res.getBody().results.forEach(move => {
+      expect(move).to.have.property('name');
+      expect(move).to.have.property('url');
+    });
+  });
+
+  test("Response time is under 3000ms", function() {
+    expect(res.getResponseTime()).to.be.below(3000);
+  });
+}
+
+assert {
+  res.status: eq 200
+  res.body.count: isDefined
+  res.body.results: isDefined
+}

@@ -1,0 +1,51 @@
+meta {
+  name: Get Type by Name
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/type/{{typeName}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Status 200 - Type found", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Response has id", function() {
+    expect(res.getBody()).to.have.property('id');
+    expect(res.getBody().id).to.be.a('number');
+  });
+
+  test("Response has name", function() {
+    expect(res.getBody()).to.have.property('name');
+  });
+
+  test("Response has damage_relations", function() {
+    expect(res.getBody()).to.have.property('damage_relations');
+  });
+
+  test("damage_relations has double_damage_to", function() {
+    expect(res.getBody().damage_relations).to.have.property('double_damage_to');
+    expect(res.getBody().damage_relations.double_damage_to).to.be.an('array');
+  });
+
+  test("Response has pokemon array", function() {
+    expect(res.getBody()).to.have.property('pokemon');
+    expect(res.getBody().pokemon).to.be.an('array');
+  });
+
+  test("Response time is under 3000ms", function() {
+    expect(res.getResponseTime()).to.be.below(3000);
+  });
+}
+
+assert {
+  res.status: eq 200
+  res.body.id: isDefined
+  res.body.name: isDefined
+  res.body.damage_relations: isDefined
+}

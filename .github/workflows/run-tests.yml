@@ -1,0 +1,185 @@
+name: Run Bruno Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'collections/**'
+      - '.github/workflows/run-tests.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: 'Resource group to test (leave empty for all)'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - pokemon
+          - berry
+          - item
+          - move
+          - type
+          - ability
+
+jobs:
+  test:
+    name: Run API Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install Bruno CLI
+        run: npm install -g @usebruno/cli
+
+      - name: Install backend dependencies
+        run: cd backend && npm install
+
+      - name: Create results directory
+        run: mkdir -p backend/results frontend/public/data
+
+      - name: Run Bruno tests (all)
+        if: ${{ github.event.inputs.folder == '' || github.event_name != 'workflow_dispatch' }}
+        run: |
+          bru run \
+            --env Prod \
+            --reporter-json backend/results/latest.json \
+            --no-bail \
+            collections/pokeapi
+        continue-on-error: true
+
+      - name: Run Bruno tests (specific folder)
+        if: ${{ github.event.inputs.folder != '' && github.event_name == 'workflow_dispatch' }}
+        run: |
+          bru run \
+            --env Prod \
+            --reporter-json backend/results/latest.json \
+            --no-bail \
+            collections/pokeapi/${{ github.event.inputs.folder }}
+        continue-on-error: true
+
+      - name: Generate summary JSON
+        run: |
+          node -e "
+          const fs = require('fs');
+          const raw = JSON.parse(fs.readFileSync('backend/results/latest.json', 'utf8'));
+          const summary = {
+            runId: require('crypto').randomUUID(),
+            timestamp: new Date().toISOString(),
+            folder: '${{ github.event.inputs.folder }}' || 'all',
+            branch: '${{ github.ref_name }}',
+            commit: '${{ github.sha }}'.slice(0, 7),
+            passed: raw.summary?.passedTestCount ?? 0,
+            failed: raw.summary?.failedTestCount ?? 0,
+            total: raw.summary?.totalTestCount ?? 0,
+            results: raw
+          };
+          fs.writeFileSync('backend/results/latest.json', JSON.stringify(summary, null, 2));
+          fs.copyFileSync('backend/results/latest.json', 'frontend/public/data/latest.json');
+          console.log('Summary:', JSON.stringify({ passed: summary.passed, failed: summary.failed, total: summary.total }));
+          "
+
+      - name: Update history JSON
+        run: |
+          node -e "
+          const fs = require('fs');
+          const historyFile = 'frontend/public/data/history.json';
+          let history = [];
+          if (fs.existsSync(historyFile)) {
+            try { history = JSON.parse(fs.readFileSync(historyFile, 'utf8')); } catch {}
+          }
+          const latest = JSON.parse(fs.readFileSync('frontend/public/data/latest.json', 'utf8'));
+          history.unshift(latest);
+          if (history.length > 20) history = history.slice(0, 20);
+          fs.writeFileSync(historyFile, JSON.stringify(history, null, 2));
+          "
+
+      - name: Generate Swagger spec
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          function parseBru(content) {
+            const meta = {};
+            const request = {};
+            const assertions = [];
+            const metaM = content.match(/meta\s*\{([^}]+)\}/);
+            if (metaM) metaM[1].split('\n').forEach(l => {
+              const [k, ...v] = l.trim().split(':');
+              if (k && v.length) meta[k.trim()] = v.join(':').trim();
+            });
+            const methodM = content.match(/(get|post|put|delete|patch)\s*\{([^}]+)\}/i);
+            if (methodM) {
+              request.method = methodM[1].toUpperCase();
+              const urlM = methodM[2].match(/url:\s*(.+)/);
+              if (urlM) request.url = urlM[1].trim();
+            }
+            const assertM = content.match(/assert\s*\{([^}]+)\}/);
+            if (assertM) assertM[1].split('\n').forEach(l => { if (l.trim()) assertions.push(l.trim()); });
+            return { meta, request, assertions };
+          }
+
+          const swagger = {
+            openapi: '3.0.0',
+            info: { title: 'PokéAPI QA Collection', description: 'Auto-generated from Bruno tests', version: '1.0.0' },
+            servers: [{ url: 'https://pokeapi.co/api/v2', description: 'Production' }],
+            tags: ['pokemon','berry','item','move','type','ability'].map(n => ({ name: n.charAt(0).toUpperCase()+n.slice(1), description: n+' endpoints' })),
+            paths: {}
+          };
+
+          const folders = ['pokemon','berry','item','move','type','ability'];
+          for (const folder of folders) {
+            const dir = path.join('collections/pokeapi', folder);
+            if (!fs.existsSync(dir)) continue;
+            for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.bru'))) {
+              const { meta, request, assertions } = parseBru(fs.readFileSync(path.join(dir, file), 'utf8'));
+              if (!request.method || !request.url) continue;
+              let apiPath = request.url.replace('https://pokeapi.co/api/v2','').replace('{{baseUrl}}','').replace(/\?\S+/,'');
+              apiPath = apiPath.replace(/\{\{(\w+)\}\}/g, '{$1}') || '/';
+              const method = request.method.toLowerCase();
+              if (!swagger.paths[apiPath]) swagger.paths[apiPath] = {};
+              const pathParams = (apiPath.match(/\{(\w+)\}/g)||[]).map(p => ({ name: p.replace(/[{}]/g,''), in:'path', required:true, schema:{type:'string'} }));
+              swagger.paths[apiPath][method] = {
+                tags: [folder.charAt(0).toUpperCase()+folder.slice(1)],
+                summary: meta.name || apiPath,
+                description: 'Assertions:\n' + assertions.map(a => '- ' + a).join('\n'),
+                parameters: pathParams,
+                responses: { '200': { description: 'OK' }, '404': { description: 'Not found' } }
+              };
+            }
+          }
+          fs.mkdirSync('frontend/public/data', { recursive: true });
+          fs.writeFileSync('frontend/public/data/swagger.json', JSON.stringify(swagger, null, 2));
+          console.log('Swagger generated with', Object.keys(swagger.paths).length, 'paths');
+          "
+
+      - name: Upload test results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ github.run_number }}
+          path: backend/results/latest.json
+
+      - name: Commit data files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "ci: update test results and swagger [skip ci]"
+          file_pattern: "frontend/public/data/*.json"
+
+      - name: Check test results
+        run: |
+          node -e "
+          const r = JSON.parse(require('fs').readFileSync('backend/results/latest.json'));
+          console.log('Passed:', r.passed, '| Failed:', r.failed, '| Total:', r.total);
+          if (r.failed > 0) process.exit(1);
+          "

@@ -1,0 +1,71 @@
+meta {
+  name: Get Pokemon by Name
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/pokemon/{{pokemonName}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Status 200 - Pokemon found", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Response has id property", function() {
+    expect(res.getBody()).to.have.property('id');
+    expect(res.getBody().id).to.be.a('number');
+  });
+
+  test("Response has name property", function() {
+    expect(res.getBody()).to.have.property('name');
+    expect(res.getBody().name).to.equal('pikachu');
+  });
+
+  test("Response has base experience", function() {
+    expect(res.getBody()).to.have.property('base_experience');
+    expect(res.getBody().base_experience).to.be.a('number');
+  });
+
+  test("Response has height property", function() {
+    expect(res.getBody()).to.have.property('height');
+    expect(res.getBody().height).to.be.a('number');
+  });
+
+  test("Response has abilities array", function() {
+    expect(res.getBody()).to.have.property('abilities');
+    expect(res.getBody().abilities).to.be.an('array');
+  });
+
+  test("Response has types array", function() {
+    expect(res.getBody()).to.have.property('types');
+    expect(res.getBody().types).to.be.an('array');
+    expect(res.getBody().types.length).to.be.greaterThan(0);
+  });
+
+  test("Response has sprites", function() {
+    expect(res.getBody()).to.have.property('sprites');
+    expect(res.getBody().sprites).to.have.property('front_default');
+  });
+
+  test("Response has stats array", function() {
+    expect(res.getBody()).to.have.property('stats');
+    expect(res.getBody().stats).to.be.an('array');
+    expect(res.getBody().stats.length).to.equal(6);
+  });
+
+  test("Response time is under 3000ms", function() {
+    expect(res.getResponseTime()).to.be.below(3000);
+  });
+}
+
+assert {
+  res.status: eq 200
+  res.body.id: isDefined
+  res.body.name: isDefined
+  res.body.abilities: isDefined
+  res.body.types: isDefined
+}

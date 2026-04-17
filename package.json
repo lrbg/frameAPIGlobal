@@ -1,0 +1,17 @@
+{
+  "name": "frame-api-global",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API QA Automation Framework using Bruno + Node.js + React",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=frontend",
+    "test:bruno": "cd collections/pokeapi && bru run --env Prod --reporter-json ../../backend/results/latest.json",
+    "generate:swagger": "node scripts/generate-swagger.js",
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend"
+  },
+  "workspaces": ["frontend", "backend"],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

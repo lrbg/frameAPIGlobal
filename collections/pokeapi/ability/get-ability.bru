@@ -1,0 +1,51 @@
+meta {
+  name: Get Ability by Name
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/ability/{{abilityName}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Status 200 - Ability found", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Response has id", function() {
+    expect(res.getBody()).to.have.property('id');
+    expect(res.getBody().id).to.be.a('number');
+  });
+
+  test("Response has name", function() {
+    expect(res.getBody()).to.have.property('name');
+  });
+
+  test("Response has is_main_series", function() {
+    expect(res.getBody()).to.have.property('is_main_series');
+  });
+
+  test("Response has effect_entries", function() {
+    expect(res.getBody()).to.have.property('effect_entries');
+    expect(res.getBody().effect_entries).to.be.an('array');
+  });
+
+  test("Response has pokemon array", function() {
+    expect(res.getBody()).to.have.property('pokemon');
+    expect(res.getBody().pokemon).to.be.an('array');
+  });
+
+  test("Response time is under 3000ms", function() {
+    expect(res.getResponseTime()).to.be.below(3000);
+  });
+}
+
+assert {
+  res.status: eq 200
+  res.body.id: isDefined
+  res.body.name: isDefined
+  res.body.effect_entries: isDefined
+}

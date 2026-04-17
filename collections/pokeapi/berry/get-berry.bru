@@ -1,0 +1,51 @@
+meta {
+  name: Get Berry by Name
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/berry/{{berryName}}
+  body: none
+  auth: none
+}
+
+tests {
+  test("Status 200 - Berry found", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Response has id property", function() {
+    expect(res.getBody()).to.have.property('id');
+    expect(res.getBody().id).to.be.a('number');
+  });
+
+  test("Response has name property", function() {
+    expect(res.getBody()).to.have.property('name');
+  });
+
+  test("Response has growth time", function() {
+    expect(res.getBody()).to.have.property('growth_time');
+    expect(res.getBody().growth_time).to.be.a('number');
+  });
+
+  test("Response has max harvest", function() {
+    expect(res.getBody()).to.have.property('max_harvest');
+  });
+
+  test("Response has flavors array", function() {
+    expect(res.getBody()).to.have.property('flavors');
+    expect(res.getBody().flavors).to.be.an('array');
+  });
+
+  test("Response time is under 3000ms", function() {
+    expect(res.getResponseTime()).to.be.below(3000);
+  });
+}
+
+assert {
+  res.status: eq 200
+  res.body.id: isDefined
+  res.body.name: isDefined
+  res.body.growth_time: isDefined
+}
