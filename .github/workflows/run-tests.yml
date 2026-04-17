@@ -37,13 +37,13 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: backend/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
 
       - name: Install backend dependencies
-        run: cd backend && npm install
+        run: npm install && npm install --workspace=backend
 
       - name: Create results directory
         run: mkdir -p backend/results frontend/public/data
@@ -105,64 +105,7 @@ jobs:
           "
 
       - name: Generate Swagger spec
-        run: |
-          node -e "
-          const fs = require('fs');
-          const path = require('path');
-
-          function parseBru(content) {
-            const meta = {};
-            const request = {};
-            const assertions = [];
-            const metaM = content.match(/meta\s*\{([^}]+)\}/);
-            if (metaM) metaM[1].split('\n').forEach(l => {
-              const [k, ...v] = l.trim().split(':');
-              if (k && v.length) meta[k.trim()] = v.join(':').trim();
-            });
-            const methodM = content.match(/(get|post|put|delete|patch)\s*\{([^}]+)\}/i);
-            if (methodM) {
-              request.method = methodM[1].toUpperCase();
-              const urlM = methodM[2].match(/url:\s*(.+)/);
-              if (urlM) request.url = urlM[1].trim();
-            }
-            const assertM = content.match(/assert\s*\{([^}]+)\}/);
-            if (assertM) assertM[1].split('\n').forEach(l => { if (l.trim()) assertions.push(l.trim()); });
-            return { meta, request, assertions };
-          }
-
-          const swagger = {
-            openapi: '3.0.0',
-            info: { title: 'PokéAPI QA Collection', description: 'Auto-generated from Bruno tests', version: '1.0.0' },
-            servers: [{ url: 'https://pokeapi.co/api/v2', description: 'Production' }],
-            tags: ['pokemon','berry','item','move','type','ability'].map(n => ({ name: n.charAt(0).toUpperCase()+n.slice(1), description: n+' endpoints' })),
-            paths: {}
-          };
-
-          const folders = ['pokemon','berry','item','move','type','ability'];
-          for (const folder of folders) {
-            const dir = path.join('collections/pokeapi', folder);
-            if (!fs.existsSync(dir)) continue;
-            for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.bru'))) {
-              const { meta, request, assertions } = parseBru(fs.readFileSync(path.join(dir, file), 'utf8'));
-              if (!request.method || !request.url) continue;
-              let apiPath = request.url.replace('https://pokeapi.co/api/v2','').replace('{{baseUrl}}','').replace(/\?\S+/,'');
-              apiPath = apiPath.replace(/\{\{(\w+)\}\}/g, '{$1}') || '/';
-              const method = request.method.toLowerCase();
-              if (!swagger.paths[apiPath]) swagger.paths[apiPath] = {};
-              const pathParams = (apiPath.match(/\{(\w+)\}/g)||[]).map(p => ({ name: p.replace(/[{}]/g,''), in:'path', required:true, schema:{type:'string'} }));
-              swagger.paths[apiPath][method] = {
-                tags: [folder.charAt(0).toUpperCase()+folder.slice(1)],
-                summary: meta.name || apiPath,
-                description: 'Assertions:\n' + assertions.map(a => '- ' + a).join('\n'),
-                parameters: pathParams,
-                responses: { '200': { description: 'OK' }, '404': { description: 'Not found' } }
-              };
-            }
-          }
-          fs.mkdirSync('frontend/public/data', { recursive: true });
-          fs.writeFileSync('frontend/public/data/swagger.json', JSON.stringify(swagger, null, 2));
-          console.log('Swagger generated with', Object.keys(swagger.paths).length, 'paths');
-          "
+        run: node scripts/generate-swagger.js
 
       - name: Upload test results artifact
         uses: actions/upload-artifact@v4
