@@ -1,9 +1,9 @@
 {
-  "runId": "38ef8bf8-48ac-4042-9b0b-31e7594effe6",
-  "timestamp": "2026-04-17T21:18:57.454Z",
+  "runId": "453db95d-2247-42f2-b1fd-8a7b8692cce9",
+  "timestamp": "2026-04-17T21:28:11.171Z",
   "folder": "all",
   "branch": "main",
-  "commit": "291cbbef1e3a0858e9c0b4299e7c52252a18a09d",
+  "commit": "78f0a057c8717427fba8fd36c3cf2669f336822e",
   "passed": 0,
   "failed": 0,
   "total": 0,
@@ -26,32 +26,31 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:55 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:08 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "317",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"59a-FEYFYxcIzZakBmxyK96FOme5Hn8\"",
-              "function-execution-id": "1ib9e0g7ydur",
+              "function-execution-id": "n0g9xkurosm7",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "37b5aa04046b8d4ec4a94df77c0c1ad6",
+              "x-cloud-trace-context": "8e3033c07f997f03fb43124bb8f91f7a",
               "x-country-code": "US",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-bur-kbur8200043-BUR",
-              "x-cache": "HIT",
+              "x-served-by": "cache-lga21978-LGA",
+              "x-cache": "MISS",
               "x-cache-hits": "0",
-              "x-timer": "S1776460611.738325,VS0,VE163",
+              "x-timer": "S1776461289.733303,VS0,VE181",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
-              "age": "124",
-              "cf-cache-status": "HIT",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=6,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=K2sTCK4RiKA3%2BTjaROXvz5dHe%2F43C2Ezy90YFivw02XyruAoDOpLubP6Tojn%2BQhrN9JNDi5AbC2eBJxum6nTDmfZym49j0EmMrH8%2FpLM6YXuprDuMm%2FXlUSIyaCW\"}]}",
-              "cf-ray": "9ede770b3f72d567-LAX"
+              "cf-cache-status": "MISS",
+              "server-timing": "cfCacheStatus;desc=\"MISS\", cfEdge;dur=31,cfOrigin;dur=186",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=oW%2BH9SMEKGjYGcDWpMSCjnDV9cdVyIVAuY5rd%2BnXEXE4gai9ZcAWlBsKydp3W6%2BPgz7ks1Fz0TMLnGlMiPXCyJLIW1QsIDttwprVcAii0fO4fCpN8JbufBTUqjpv\"}]}",
+              "cf-ray": "9ede848e696a78af-ORD"
             },
             "data": {
               "count": 371,
@@ -141,13 +140,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/ability?limit=20&offset=0",
-            "responseTime": 103
+            "responseTime": 277
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "W6jjevrgYK9l7oOQtwEkP",
+              "uid": "MwPgQ90sY_dE-Qg-wj0hO",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -155,7 +154,7 @@
               "status": "pass"
             },
             {
-              "uid": "59JpYz7ccHQafiQasG3Xq",
+              "uid": "zqu631gidoON2uQxjXP1j",
               "lhsExpr": "res.body.count",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -163,7 +162,7 @@
               "status": "pass"
             },
             {
-              "uid": "berhU7cyu_j0nTJBhwUlZ",
+              "uid": "UMyn9pFL4zlVRUyvnCxL3",
               "lhsExpr": "res.body.results",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -175,38 +174,38 @@
             {
               "description": "Status 200 - Successful response",
               "status": "pass",
-              "uid": "49BENfLu9a3WI3a-GdRrW"
+              "uid": "AxzuK3aU0C9RJRSmhI4zS"
             },
             {
               "description": "Response has count",
               "status": "pass",
-              "uid": "UKhoXH_O8Jyxj84Fq2Ar-"
+              "uid": "uM0fDRtME2E5ntHd2VL5S"
             },
             {
               "description": "Response has results array",
               "status": "pass",
-              "uid": "Tj_B8UrNfp-Yui1xhzyK1"
+              "uid": "tHx7pumfjB7_XwPdqppO8"
             },
             {
               "description": "Results not empty",
               "status": "pass",
-              "uid": "FFlEe4DR1wkPPUo0fuT26"
+              "uid": "GeWtrnRsEotKovLvbuXWW"
             },
             {
               "description": "Each ability has name and url",
               "status": "pass",
-              "uid": "L9FtNGRSqAg2Kf-YVf-0C"
+              "uid": "J0bdjfOcPGDLi87uuH833"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "zRIUBJ1ULLxpW5KC312Fj"
+              "uid": "oB7PV_vK7ENTK77Gm1hxo"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.354892977,
+          "runDuration": 0.538905575,
           "name": "List Abilities",
           "path": "ability/list-ability",
           "iterationIndex": 0
@@ -226,33 +225,32 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:55 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:09 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "2701",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"5f67-2GrIqVzbwL83I3vIvc+dE2PSOVQ\"",
-              "function-execution-id": "gnje1b0qmzcl",
+              "function-execution-id": "ook5o7upx9r8",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "09e78177fa6bb7863eae44929e0f9019",
+              "x-cloud-trace-context": "5b00bc0dbcd6418cf0cd3889494a9ee8",
               "x-country-code": "US",
-              "x-orig-accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-dfw-kdfw8210041-DFW",
-              "x-cache": "HIT",
+              "x-served-by": "cache-pdk-kfty8610046-PDK",
+              "x-cache": "MISS",
               "x-cache-hits": "0",
-              "x-timer": "S1773897453.043483,VS0,VE1",
+              "x-timer": "S1773320290.222193,VS0,VE233",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "65399",
+              "age": "84413",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=15,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Ow%2Bg37AUf2Bh4qBNXbSKepQ4bZExYtzsnplWBpxBN5mHJTeANpEDwyRRCTfJCrCawZ%2B2zYHqZWObC7C44bLCxxOiweBT8W38ndb0rxBtC%2F8GnFt9tBRhDBUjyAF5\"}]}",
-              "cf-ray": "9ede770cabf5dcee-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=7,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=qWkbHwsg4FJB3nAe53VRvgcGcsTmpjPj92%2Bwa5DZBZANRXFJS21zXSubpVUPI9LnfdHimSjxd8u2zE48bK1Aps52TkcrpPCdJ6u3vGRFYDJ15jF4ulGlcDIQ4bG4\"}]}",
+              "cf-ray": "9ede84913d2ce271-ORD"
             },
             "data": {
               "effect_changes": [
@@ -1357,13 +1355,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/ability/stench",
-            "responseTime": 64
+            "responseTime": 29
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "usqe7pgXDLgut0ORuxQFj",
+              "uid": "Ukf6DmVM1nrVAZBaKH1E_",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -1371,7 +1369,7 @@
               "status": "pass"
             },
             {
-              "uid": "t6xKn1iPSSQOBDyxqYH0h",
+              "uid": "OZrWTD5vye5cAuMp_YstS",
               "lhsExpr": "res.body.id",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1379,7 +1377,7 @@
               "status": "pass"
             },
             {
-              "uid": "s1M_YIiyAtRRSbN3vdO2p",
+              "uid": "w57ZYmH6O4KGngagSm6ZR",
               "lhsExpr": "res.body.name",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1387,7 +1385,7 @@
               "status": "pass"
             },
             {
-              "uid": "f5h17naM2VQc_LhQoYfTh",
+              "uid": "x6fSPqlxGAJRnRo0uGZZC",
               "lhsExpr": "res.body.effect_entries",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1399,43 +1397,43 @@
             {
               "description": "Status 200 - Ability found",
               "status": "pass",
-              "uid": "Yo7bD6KDZOGvY8QoHZk8O"
+              "uid": "5Mm1rMI1JCAaVfzUbCQkZ"
             },
             {
               "description": "Response has id",
               "status": "pass",
-              "uid": "J0e8AMqkRzgIkWoUTOnnu"
+              "uid": "pNWnfCNEd299CAmDx-sis"
             },
             {
               "description": "Response has name",
               "status": "pass",
-              "uid": "rQe_qOph7oMCjn-KFEk1L"
+              "uid": "NR8sNf8H7_ZdfnQ0KVvUK"
             },
             {
               "description": "Response has is_main_series",
               "status": "pass",
-              "uid": "GLEsXswi4-DMAQ839bsK-"
+              "uid": "7VV1pIHAXDaW-L2VirEjg"
             },
             {
               "description": "Response has effect_entries",
               "status": "pass",
-              "uid": "DsFsYTYNyExRjrDe41yGU"
+              "uid": "oukixnoaC2ULK9ycl9N20"
             },
             {
               "description": "Response has pokemon array",
               "status": "pass",
-              "uid": "1hOSWW_R2Tgl6inxjpa1Q"
+              "uid": "EZLbNVyPZ4zICWWJq4q2s"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "_pCDSvNJouEytI_kKCwtG"
+              "uid": "g8APRQT2NbeHIsEv_4-WB"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.160504156,
+          "runDuration": 0.132915515,
           "name": "Get Ability by Name",
           "path": "ability/get-ability",
           "iterationIndex": 0
@@ -1455,32 +1453,31 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:55 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:09 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "260",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"51d-GY/V9nENFrEJrqhH0BzJzc1v8j0\"",
-              "function-execution-id": "8wmf27r5g9te",
+              "function-execution-id": "iglzrfkpj5su",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "dbf3ceb181c908fd09dfd1b8b0671ee3",
+              "x-cloud-trace-context": "6c94596318d25f70db56e82261f8253b",
               "x-country-code": "US",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-dfw-kdfw8210166-DFW",
+              "x-served-by": "cache-iad-kiad7000100-IAD",
               "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1776133327.586918,VS0,VE84",
+              "x-timer": "S1776461289.310970,VS0,VE1",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "124",
-              "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=9,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7FBirDTcw4rbtehP0Mx7mN0DkGTOfcW9dbVuXyjf6JZjuY1P%2FIqbIxgyIR8nYlDtCXiSOwIsOJjDbMyMQq2O%2BEjudSOUlQJK11i3Kv5EI03kwwItRDDdOynKWsIE\"}]}",
-              "cf-ray": "9ede770dafc8fca7-LAX"
+              "cf-cache-status": "MISS",
+              "server-timing": "cfCacheStatus;desc=\"MISS\", cfEdge;dur=41,cfOrigin;dur=2",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2BCYWkXi%2BX3GwlC4gjGTsSftGnyPgUGscqFSCavdDV0klD7Efg%2FFK7ziBg6VXsprLV0c%2FS8%2FePITWZeOUB4oTbejfi%2Fr47HplK%2FwGgC5A9wh6bs17DYzj876EoZM6\"}]}",
+              "cf-ray": "9ede84920dce32f4-ORD"
             },
             "data": {
               "count": 64,
@@ -1570,13 +1567,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/berry?limit=20&offset=0",
-            "responseTime": 53
+            "responseTime": 62
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "y1QifowZnljZmXRWJPWqS",
+              "uid": "wtm3pjuVZE7T4mIiNsNNG",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -1584,7 +1581,7 @@
               "status": "pass"
             },
             {
-              "uid": "D_kLmFVKWPJq8579NNWd5",
+              "uid": "Zy-BXcbTeb7aIuQ8oimr5",
               "lhsExpr": "res.body.count",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1592,7 +1589,7 @@
               "status": "pass"
             },
             {
-              "uid": "9WSCzwGJwLzPw7yrUIuWa",
+              "uid": "yZVoDtNqNnM5_sUymeSMs",
               "lhsExpr": "res.body.results",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1604,38 +1601,38 @@
             {
               "description": "Status 200 - Successful response",
               "status": "pass",
-              "uid": "9bdHdqI5DeIPzy3WOtbQB"
+              "uid": "xZ_fxARk9Uzsm1zn5VTes"
             },
             {
               "description": "Response has count property",
               "status": "pass",
-              "uid": "pWeYF6Ut9kldMBFm70kKx"
+              "uid": "X_une7siTkJAjHZ_7tVQn"
             },
             {
               "description": "Response has results array",
               "status": "pass",
-              "uid": "6O3Xm3ek_ybog0PHs2Vop"
+              "uid": "A8NoUdE5ae4KzOWRFcWhA"
             },
             {
               "description": "Results are not empty",
               "status": "pass",
-              "uid": "jr8J5pd5LXTfQpZGBi3-v"
+              "uid": "WJIbqpSwjZAu6rmvFVr0i"
             },
             {
               "description": "Each berry has name and url",
               "status": "pass",
-              "uid": "dJhF3bUgigZ1RLREi40Ug"
+              "uid": "jjNdPb-RmAEialRFEYnth"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "YVygZ5NTnQyzuAWRDY6Ha"
+              "uid": "fhC-8nbKgCHebuiyDzVZF"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.133653205,
+          "runDuration": 0.14545609,
           "name": "List Berries",
           "path": "berry/list-berry",
           "iterationIndex": 0
@@ -1655,31 +1652,30 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:55 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:09 GMT",
               "content-type": "application/json; charset=utf-8",
               "transfer-encoding": "chunked",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"330-qewQ37yB7yyQ7812CEdaWUDA8ck\"",
-              "function-execution-id": "1qu7igcf02ws",
+              "function-execution-id": "t88lx67oq9yk",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "f089e018cc077a53b04f084ec11fb21c;o=1",
+              "x-cloud-trace-context": "89234b35b53010e32d94f5dc54183856",
               "x-country-code": "US",
               "x-powered-by": "Express",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=iJZ0iCuqViOWL%2BhactR7EB8b1wwemt7s0lgUhRH7uYqLU6OCtSUlzhYIEcDVEQnhMeKMwOeBEOl6zH%2FtM7i%2FWYJZOPKDsX8%2Fpr3ldgQOKS%2FRx%2BEHoKHvXvfwC%2FD5\"}]}",
-              "x-served-by": "cache-dfw-kdfw8210031-DFW",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Wa6i1Q6Kx4DtLFPdD39dlE3bbO%2BZekJ4Aw2w%2BL4n8UYjxGZlMT2lZt5LiHiovzTsIadGa6GM%2BG07VKyC0d7FkmC0Q2DZbv494sJYRNoIy2GTntivAMPehf4%2BGZCA\"}]}",
+              "x-served-by": "cache-lga21971-LGA",
               "x-cache": "HIT",
-              "x-cache-hits": "0",
-              "x-timer": "S1774233322.572684,VS0,VE5",
+              "x-cache-hits": "1",
+              "x-timer": "S1774468114.646099,VS0,VE3",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "28900",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=6,cfOrigin;dur=0",
-              "cf-ray": "9ede770e8bfcd7cc-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=30,cfOrigin;dur=0",
+              "cf-ray": "9ede8492ef1d64b3-ORD"
             },
             "data": {
               "firmness": {
@@ -1747,7 +1743,7 @@
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "knbrnza0BXVqeSABLdM9k",
+              "uid": "lFhjzIvKkmzTQQcg6RG6i",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -1755,7 +1751,7 @@
               "status": "pass"
             },
             {
-              "uid": "Yex0sll2b2JWVHppYFdUg",
+              "uid": "PwfTFUbdKOB1TQc5aQTBW",
               "lhsExpr": "res.body.id",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1763,7 +1759,7 @@
               "status": "pass"
             },
             {
-              "uid": "o6H705L-J_xX8oaJqI1Un",
+              "uid": "2jUY2YkRAz4Cby3DcxQRT",
               "lhsExpr": "res.body.name",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1771,7 +1767,7 @@
               "status": "pass"
             },
             {
-              "uid": "TqnMr6Lcd2Xevp96pPpkb",
+              "uid": "HFFutHGaQxY65c-u9kNdq",
               "lhsExpr": "res.body.growth_time",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1783,43 +1779,43 @@
             {
               "description": "Status 200 - Berry found",
               "status": "pass",
-              "uid": "0XkLuWo8OagLVl1CEwzZC"
+              "uid": "1qM1XaQEJ6ukAylc1yK-u"
             },
             {
               "description": "Response has id property",
               "status": "pass",
-              "uid": "rhwJFhcBkQXtDWW694Q9I"
+              "uid": "RbKSdwmh6GHo0P4jz7FoY"
             },
             {
               "description": "Response has name property",
               "status": "pass",
-              "uid": "W_y2VpWi-CSgO-H4au_BB"
+              "uid": "gnNKjTMqkmxElHeaGKBj8"
             },
             {
               "description": "Response has growth time",
               "status": "pass",
-              "uid": "RzdskmfNOsW8g_kCPOMzu"
+              "uid": "X-um9OGRLGmo1RqeFlJWw"
             },
             {
               "description": "Response has max harvest",
               "status": "pass",
-              "uid": "ROEYpkCmVN9p3Xnq-b7L5"
+              "uid": "ADWxMSr2blT_jgpGTcogJ"
             },
             {
               "description": "Response has flavors array",
               "status": "pass",
-              "uid": "n95B8Qftxw0Cyq6mpohgE"
+              "uid": "y9o7pyJ9BoBZucXKttYlt"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "LQrwMUmnBJnp-EApaUIDr"
+              "uid": "HczZmdGaOz3sEsMDHn1qL"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.155707715,
+          "runDuration": 0.161120193,
           "name": "Get Berry by Name",
           "path": "berry/get-berry",
           "iterationIndex": 0
@@ -1839,33 +1835,31 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:55 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:09 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "272",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"568-74JgriWc3hkr0a24cJrfna44rz8\"",
-              "function-execution-id": "r7jly1j1yyg7",
+              "function-execution-id": "zm9en1jbencw",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "9d8181f683ea8dd077f9abe8fb514998",
+              "x-cloud-trace-context": "1f7a0fc4bcee2c817d1785c0e3c5c8b9",
               "x-country-code": "US",
-              "x-orig-accept-language": "en-US,en;q=0.9",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-dfw-kdfw8210115-DFW",
-              "x-cache": "HIT",
+              "x-served-by": "cache-iad-kiad7000072-IAD",
+              "x-cache": "MISS",
               "x-cache-hits": "0",
-              "x-timer": "S1776460612.807631,VS0,VE253",
+              "x-timer": "S1776336759.303990,VS0,VE202",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "123",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=6,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=O7s2%2FCb8AF0tdOxIG8v9z0OZr7%2FjNZcocWvL%2Fm4TgbEYen%2BClIjx0ZvlUXmG2suRF28uCmU8atPuyhCL0Gl40CCM%2FOZqqthhvcG5kqHMs%2Bd1a6JBVabHOOnP8d5g\"}]}",
-              "cf-ray": "9ede770f797b49d4-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=32,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Gi%2FHwmHYuYBIAkk%2FKUrutDcKFF4oL2Fl8ETlA8DZZRbkHODNtJDz7HMAxs%2F%2FP8uRUWFhKxXTwn4pFo%2Fs0NC8lXbfeEjhHGc1UKRxUOyc1KE0irTszjMC1P1agdXG\"}]}",
+              "cf-ray": "9ede8493ea2beace-ORD"
             },
             "data": {
               "count": 2175,
@@ -1955,13 +1949,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/item?limit=20&offset=0",
-            "responseTime": 53
+            "responseTime": 49
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "eQBR6VQMRC6YJN7Hu73Wb",
+              "uid": "9BY-eC7FIXaFOxCs3O2MY",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -1969,7 +1963,7 @@
               "status": "pass"
             },
             {
-              "uid": "qXR9PFvLMqDY5v9b7psHo",
+              "uid": "SfMJ_ZGg5Re91XWidfsHf",
               "lhsExpr": "res.body.count",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1977,7 +1971,7 @@
               "status": "pass"
             },
             {
-              "uid": "pYp_LXIB_Hqjyz8sQU-Qi",
+              "uid": "sMFFF-Nu_9vCvLYTPFdJs",
               "lhsExpr": "res.body.results",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -1989,38 +1983,38 @@
             {
               "description": "Status 200 - Successful response",
               "status": "pass",
-              "uid": "HzKXNL2TqaWDY5EZpVbfR"
+              "uid": "30rXWrcFDa_Ugc-C3x99u"
             },
             {
               "description": "Response has count property",
               "status": "pass",
-              "uid": "pLfQvU6Rqi3445T6qbcce"
+              "uid": "KbOlogNxDNKG5u5_QUSAU"
             },
             {
               "description": "Response has results array",
               "status": "pass",
-              "uid": "2E1SKu2jP-md2xStVwENz"
+              "uid": "O_pAKsd5_6hqVHjYHytld"
             },
             {
               "description": "Results not empty",
               "status": "pass",
-              "uid": "PiKbtK6AtjKax5njeRxu1"
+              "uid": "_V6oleoULBzR-WoXQTWkW"
             },
             {
               "description": "Each item has name and url",
               "status": "pass",
-              "uid": "b7XuWAY2NXH5kXfSxd_SR"
+              "uid": "Sjqf3dERBQE8jbesgubsX"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "hJZj0O2WN3KqiTlWmnAeH"
+              "uid": "lb4eE0Yxt1Ll2wbIo1feN"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.126104581,
+          "runDuration": 0.12897573,
           "name": "List Items",
           "path": "item/list-item",
           "iterationIndex": 0
@@ -2040,32 +2034,33 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:56 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:09 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "1942",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"4700-uMcBzV6whRP393usJlVJaQzp9Ug\"",
-              "function-execution-id": "ney8noirk2dr",
+              "function-execution-id": "h72sn6kjrryh",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "b1533f9bec48dc3f15801c2d9714ff17",
+              "x-cloud-trace-context": "5956b6c1a0da1e02fdefcbea3736ddff",
               "x-country-code": "US",
+              "x-orig-accept-language": "*",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-bfi-krnt7300109-BFI",
+              "x-served-by": "cache-iad-kiad7000041-IAD",
               "x-cache": "MISS",
               "x-cache-hits": "0",
-              "x-timer": "S1776329215.396131,VS0,VE252",
+              "x-timer": "S1774263819.583605,VS0,VE130",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "44320",
+              "age": "60251",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=10,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=69EkSkkuh5kJjx4ucvNWIFrO%2FxIBYZnzyeuJzS9Dz62mczjmaD31afi4BoouMopSaKTqpNcR%2FnxdLTNJ4FbOhNEVPJxTN0%2FgDUx34TuhVPmiDHFZn%2F9hUv5Oj5NM\"}]}",
-              "cf-ray": "9ede77104af24896-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=6,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=e3Hb%2FmKafRJ26f1u5fen9P5Zl0XKyDMDCubSqxVscLmzkI4mZkyrRaVYzwI6N1RIIGQPI5T3%2BgH%2B80JskMTlDriXZIlKQ%2FEZKFboF3hqNeFCyu8sT3dFWkN29ktU\"}]}",
+              "cf-ray": "9ede8494bfd3a700-ORD"
             },
             "data": {
               "attributes": [
@@ -2866,13 +2861,13 @@
               }
             },
             "url": "https://pokeapi.co/api/v2/item/master-ball",
-            "responseTime": 51
+            "responseTime": 21
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "ACqcY8XZUg410fCGcA9U9",
+              "uid": "vtIe9QPjLA-0aZ6H42roE",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -2880,7 +2875,7 @@
               "status": "pass"
             },
             {
-              "uid": "d0n_QjK_2RwGVKjQsRJje",
+              "uid": "roN7Egvoog1xv-OhFYE9A",
               "lhsExpr": "res.body.id",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -2888,7 +2883,7 @@
               "status": "pass"
             },
             {
-              "uid": "3FUMFK5sFJxvszFXbCnjo",
+              "uid": "FyQIl2mBOvMwHCvrGZk7H",
               "lhsExpr": "res.body.name",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -2896,7 +2891,7 @@
               "status": "pass"
             },
             {
-              "uid": "0CDDqJEjGCVeSwaffs8Hg",
+              "uid": "zc366BjwNebN6ejkfRUEX",
               "lhsExpr": "res.body.cost",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -2908,43 +2903,43 @@
             {
               "description": "Status 200 - Item found",
               "status": "pass",
-              "uid": "dKihjFHA_vXPdnLubaXVI"
+              "uid": "BQ7OiHCkJVgPRp_HcxAyr"
             },
             {
               "description": "Response has id",
               "status": "pass",
-              "uid": "DbpmHUfmNTtCZxdlfP7li"
+              "uid": "yHFluofk3XaLmVSYOQwpR"
             },
             {
               "description": "Response has name",
               "status": "pass",
-              "uid": "JcbaP8wwasF-rP_B6H3hG"
+              "uid": "md83de3PvT4pn61nMAhmJ"
             },
             {
               "description": "Response has cost",
               "status": "pass",
-              "uid": "c3yhKNchjhr0nRbHR_p0l"
+              "uid": "otyxxzJQ6fTJeIjMcL-_R"
             },
             {
               "description": "Response has category",
               "status": "pass",
-              "uid": "JnDB7Pv28l1QvcjJ4LRPH"
+              "uid": "Kt3UeRej0xiQPUackBjVb"
             },
             {
               "description": "Response has effect_entries",
               "status": "pass",
-              "uid": "_4DANbKjEm95c-KZKe6a8"
+              "uid": "38DOojj8I55ylJaqgQ-ZF"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "UzHp3cMtupS_FP42QOlUI"
+              "uid": "So0RmK19UFwTeJooNksDL"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.13437476,
+          "runDuration": 0.11052976,
           "name": "Get Item by Name",
           "path": "item/get-item",
           "iterationIndex": 0
@@ -2964,32 +2959,31 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:56 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:09 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "295",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"550-PcFVmXQ61E7j3LIC/6/3cY3GgEQ\"",
-              "function-execution-id": "1ib95zg409vy",
+              "function-execution-id": "nazlg067p4w9",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "2dd9a43e1cc607093652504cbe594e88",
+              "x-cloud-trace-context": "d9473ed751dfc60289188feeae217bd5",
               "x-country-code": "US",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-sjc1000105-SJC",
+              "x-served-by": "cache-pdk-kfty8610044-PDK",
               "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1776460612.360814,VS0,VE129",
+              "x-timer": "S1776055937.764141,VS0,VE270",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "123",
-              "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=12,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=i9zSZT1RRThjjSwCyx%2BotnvefcMfABVRYYMtEbVOMJ9%2BoO0Nks53t9oOQH8tDmrbpfv6eUoCNHzOtpvcq4Yl9Hh9Di3bCCyQKbTQqFUG%2B2iJr8h5HjKbnS2mvHyc\"}]}",
-              "cf-ray": "9ede77111e8f996a-LAX"
+              "cf-cache-status": "REVALIDATED",
+              "server-timing": "cfCacheStatus;desc=\"REVALIDATED\", cfEdge;dur=39,cfOrigin;dur=116",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=YlygPwu6bz8xmlUKOCDPK%2FhQkhl4Z5LEDd40%2B0U8WnuokHxNGyZ6juzjRsIcZ8Ek5ngZHwh3xWt5K9vbQlRIp%2FmlI1khUqVjaAad586z84KCRcsIarQ3SdZDaY%2BM\"}]}",
+              "cf-ray": "9ede8495685d1125-ORD"
             },
             "data": {
               "count": 937,
@@ -3079,13 +3073,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/move?limit=20&offset=0",
-            "responseTime": 59
+            "responseTime": 175
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "wEWuqncJ-O6ZbY40VRwx1",
+              "uid": "PYwAjTd6tUtKELVFXo_bP",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -3093,7 +3087,7 @@
               "status": "pass"
             },
             {
-              "uid": "X-0t0doZ7fAwsGAPToftr",
+              "uid": "ZY7uPhxEE-V8W-FX5oaBe",
               "lhsExpr": "res.body.count",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -3101,7 +3095,7 @@
               "status": "pass"
             },
             {
-              "uid": "WYa6HX5YboR8kgLhgR-N6",
+              "uid": "CqsqLylvFyBfk1YiM0rp6",
               "lhsExpr": "res.body.results",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -3113,38 +3107,38 @@
             {
               "description": "Status 200 - Successful response",
               "status": "pass",
-              "uid": "GEviYGblTSWcAS83ruJQz"
+              "uid": "vs3Cdj3Ak84zGp07PfQHr"
             },
             {
               "description": "Response has count",
               "status": "pass",
-              "uid": "LuMZbcgaKUZvFvQdKR6L3"
+              "uid": "VITJ1K6CcIKEfHVfTYBNb"
             },
             {
               "description": "Response has results array",
               "status": "pass",
-              "uid": "PlUNWP5kPVxCtbuTCKbnf"
+              "uid": "GV4IOwVKyk54FXq0y6V2O"
             },
             {
               "description": "Results not empty",
               "status": "pass",
-              "uid": "RN7JYl1id0ihyfG0_8b6R"
+              "uid": "VnO-jnMwBDymgoO0rwaI7"
             },
             {
               "description": "Each move has name and url",
               "status": "pass",
-              "uid": "ysJ3HycvPGSGoQNhniG7b"
+              "uid": "Q57arzefMIHdsrg--uc1e"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "ktdiZ6g77eCCWNq_5JWYA"
+              "uid": "zYXP2nq-4PTit0064L095"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.129994154,
+          "runDuration": 0.252640651,
           "name": "List Moves",
           "path": "move/list-move",
           "iterationIndex": 0
@@ -3164,32 +3158,33 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:56 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:10 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "3056",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"69a2-hyde/I8D0YRXLh+nSkW9lmTTQZE\"",
-              "function-execution-id": "izan50co0qbh",
+              "function-execution-id": "1lfv94pyxv3h",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "78d869993022095da23dd974c4522c1a",
+              "x-cloud-trace-context": "08b4d44a868b995a04937d382aedd487;o=1",
               "x-country-code": "US",
+              "x-orig-accept-language": "en-CA,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,fr;q=0.6",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-sjc1000104-SJC",
+              "x-served-by": "cache-lga21969-LGA",
               "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1773359489.867115,VS0,VE1",
+              "x-timer": "S1774961672.746725,VS0,VE1",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "3507",
+              "age": "79222",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=5,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=UwVSogWfWiItG%2BcoO22ed7mpnORTRlX5m1Z%2FM%2FtJlyw7a%2BOMG8LFiAl61WmHdm%2BmVSg6zJe0YDkUnLyNAE05gG6mlY7iE4utnua0iWGQ8eyyIGhpk%2FMjoCtKUE3N\"}]}",
-              "cf-ray": "9ede7711ea4cf7df-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=19,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=mrx7Ocb6vymNNKnefKn2i0%2BbdDo2RBZ8ajxGQu8%2B%2BrytCj0Jry%2Ft4PVO46Ed6OjCt%2BAp7A9VB8A5EjInSVoMZIl1%2B5YLsnvoPRWstQ5yw43W7JQiJB%2Fs75a7lUyO\"}]}",
+              "cf-ray": "9ede84970ebb7619-ORD"
             },
             "data": {
               "accuracy": 100,
@@ -4535,13 +4530,13 @@
               }
             },
             "url": "https://pokeapi.co/api/v2/move/pound",
-            "responseTime": 46
+            "responseTime": 38
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "YpTaO057aK4zQaovmx5EP",
+              "uid": "jJJjlDt6k5-pIznkgQoOd",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -4549,7 +4544,7 @@
               "status": "pass"
             },
             {
-              "uid": "QiODMxoxFINK-1ND6O7oC",
+              "uid": "9cI-HCi-F-af_W_25gjaD",
               "lhsExpr": "res.body.id",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -4557,7 +4552,7 @@
               "status": "pass"
             },
             {
-              "uid": "Bsr_enaMDk0gel2f_ekup",
+              "uid": "hhfqgcT2xZoB6rtNADpud",
               "lhsExpr": "res.body.name",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -4565,7 +4560,7 @@
               "status": "pass"
             },
             {
-              "uid": "fSbb6v4-oFfQdm1twiHWr",
+              "uid": "iSpkRrtMkhFcds_MuMirL",
               "lhsExpr": "res.body.type",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -4577,48 +4572,48 @@
             {
               "description": "Status 200 - Move found",
               "status": "pass",
-              "uid": "AV7aCdFp7PoCFOOdIxizp"
+              "uid": "i11C9pZXDZ-YOljEeAkGL"
             },
             {
               "description": "Response has id",
               "status": "pass",
-              "uid": "N4KCsvyEtwqECGRu_MOQ1"
+              "uid": "sSCWjvL1ruHcqUbISlYf0"
             },
             {
               "description": "Response has name",
               "status": "pass",
-              "uid": "Yv5gQsmZy8AD1ziE212WI"
+              "uid": "Dzn5xeJkeUEQa1q3tx5Kb"
             },
             {
               "description": "Response has power property",
               "status": "pass",
-              "uid": "6Db38YuZUL9dQVR1e1vHl"
+              "uid": "1ckdsk7a3p0wwVyndaqHK"
             },
             {
               "description": "Response has accuracy property",
               "status": "pass",
-              "uid": "6Fp2wUAeqdD1kb3XQSAKc"
+              "uid": "pbarHAK8ifB4sjvbLJje7"
             },
             {
               "description": "Response has type",
               "status": "pass",
-              "uid": "49JNxMDEEgwqckZF-krSx"
+              "uid": "vWoXv4GMeB2k3pzKNSwg9"
             },
             {
               "description": "Response has damage_class",
               "status": "pass",
-              "uid": "0bk927eYL52lsOGF2LrmX"
+              "uid": "cCLLtRE2X33RGMMIZviG8"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "D1uHmL2UGW_LMLX41JfPg"
+              "uid": "7BzDBS7Va-eoSzLmf_1MO"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.162440207,
+          "runDuration": 0.158063944,
           "name": "Get Move by Name",
           "path": "move/get-move",
           "iterationIndex": 0
@@ -4638,33 +4633,33 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:56 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:10 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "289",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"588-iX6bV/yoloqGkIPBxJnQfrHsFIU\"",
-              "function-execution-id": "foipo0h1dg8v",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "137bf10836911f2021b09022df963ea6",
+              "traceparent": "00-725b152a74a155d9ffac17f89004f2f8-460d03d4aa448110-00",
+              "x-cloud-trace-context": "725b152a74a155d9ffac17f89004f2f8/5047694969276760336",
               "x-country-code": "US",
-              "x-orig-accept-language": "en",
+              "x-orig-accept-language": "en-US,en;q=0.9",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-sjc1000126-SJC",
+              "x-served-by": "cache-chi-klot8100137-CHI",
               "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1775698037.418772,VS0,VE2",
+              "x-timer": "S1765556373.142040,VS0,VE2",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "41011",
+              "age": "16840",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=14,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=vbMlbf2biuJ2ZvLWpvnG8B3xW2zNIGxM3%2BDsBtbKwHn9tSPF1Cowz2oJ9ptGafs0lR4f2qM190Y879A%2BEGSwh0uLP41N%2Fl3Xidk0gxpV44r55eXNrFkgEk1aMVnY\"}]}",
-              "cf-ray": "9ede7712fff42b9c-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=6,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=A1Zz5C%2BtieXPnzNYCiJYVG36uu1GVASDGnj9f2%2BGAHbotsInvoZaeUxOR1qTUleu1a81rJysf%2Bk3dDuqmKViIed1SfIHYiqH7itMzfdbzV0ZKXxouSKDzNb%2FKgK2\"}]}",
+              "cf-ray": "9ede8497ffdbb680-ORD"
             },
             "data": {
               "count": 1350,
@@ -4754,13 +4749,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0",
-            "responseTime": 63
+            "responseTime": 23
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "H3HStAsKR9hD2YgvGixqC",
+              "uid": "UI_VdlNFABBfteZdIS3dd",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -4768,7 +4763,7 @@
               "status": "pass"
             },
             {
-              "uid": "gMaUdrZnwPijoJ-HaoymO",
+              "uid": "SYecqPUd9gdwLQdWZwPwL",
               "lhsExpr": "res.body.count",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -4776,7 +4771,7 @@
               "status": "pass"
             },
             {
-              "uid": "VZpTXsGCofpSuklfAh9Mb",
+              "uid": "npUiw7-UR-4kXVDRtdm13",
               "lhsExpr": "res.body.results",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -4788,38 +4783,38 @@
             {
               "description": "Status 200 - Successful response",
               "status": "pass",
-              "uid": "RZz974OcbcJih1LAKhee5"
+              "uid": "LmeAaAK6KInfhDR48GnDf"
             },
             {
               "description": "Response has count property",
               "status": "pass",
-              "uid": "DsUUQLAzU94a5LOE16hQE"
+              "uid": "iz9Dgpks65vMtI2UsOCBU"
             },
             {
               "description": "Response has results array",
               "status": "pass",
-              "uid": "RE3jaeyFnMhrdx0uG8pei"
+              "uid": "wbS5-fS_l0Q-Sr_sgKUJ5"
             },
             {
               "description": "Results array is not empty",
               "status": "pass",
-              "uid": "L8wH3Pmdm_RuBU_3N3ql1"
+              "uid": "IRXzi553eTL3JyITf8mHu"
             },
             {
               "description": "Each result has name and url",
               "status": "pass",
-              "uid": "rGF5hVUkJDPp6Jde4NRyI"
+              "uid": "fVDzyOp2zMhjnuZfAvlq7"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "FrkYrsyBsQ1_bby1HUara"
+              "uid": "cP99MJidjIeq5Mpu95Rjz"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.136192999,
+          "runDuration": 0.102058588,
           "name": "List Pokemon",
           "path": "pokemon/list-pokemon",
           "iterationIndex": 0
@@ -4839,32 +4834,33 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:56 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:10 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "6956",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"42fa5-Rki03iRHTV1iI4o430TuCZKfHZE\"",
-              "function-execution-id": "ajaxt7lbfqy6",
+              "function-execution-id": "0g6g5o3ixi85",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "dd7a6a16345f52dd63acac29c057e005",
+              "x-cloud-trace-context": "0c764184eb992a70048e13956faa7ce3",
               "x-country-code": "US",
+              "x-orig-accept-language": "en-US,en;q=0.9",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-den-kden1300024-DEN",
-              "x-cache": "MISS",
+              "x-served-by": "cache-lga21931-LGA",
+              "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1774283133.372979,VS0,VE337",
+              "x-timer": "S1771750740.803579,VS0,VE1",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "15968",
+              "age": "34625",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=16,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=V3BgYUlqK894jA0vcS8vHRu7sBFJRZisfbHtbQD%2BQfXWU1BWXWT%2Fs7TwZ7wBlccN7EuXsflQ%2By4hvvQWRcdKbubTG3H5A53YjKD%2FtKr4PhZaYhJCGQlgKn1BN5Qo\"}]}",
-              "cf-ray": "9ede7713dbf02eae-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=7,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tJ3%2FWRmB78LrbNRutWBpyRjF31%2F8XRgPbphzvIlHOyRASCq3SLUcJ11i24sC1M09Qwmuj6uSuvB92eK4neAyESXMyA0k3xPcJhPLx0tVWUUWnq5HL3OI7Y9sqcRW\"}]}",
+              "cf-ray": "9ede8498ac7d1130-ORD"
             },
             "data": {
               "abilities": [
@@ -19334,13 +19330,13 @@
               "weight": 60
             },
             "url": "https://pokeapi.co/api/v2/pokemon/pikachu",
-            "responseTime": 68
+            "responseTime": 26
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "PQUYS4ze2wLmcCqS4cSDJ",
+              "uid": "qyv40RGmhas01K8PonkFz",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -19348,7 +19344,7 @@
               "status": "pass"
             },
             {
-              "uid": "oZw8OMWS3R2qNL-wY4iPO",
+              "uid": "kfysp8Op_do0l15owbKff",
               "lhsExpr": "res.body.id",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -19356,7 +19352,7 @@
               "status": "pass"
             },
             {
-              "uid": "e5OJSeybg8sHqJS84lsVy",
+              "uid": "ocHX8U4_2efKrpRnbA4AL",
               "lhsExpr": "res.body.name",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -19364,7 +19360,7 @@
               "status": "pass"
             },
             {
-              "uid": "lYYqz3SeTUr-xXlvWbsYw",
+              "uid": "6Ae7GhCQCmxyLa_gjSRRD",
               "lhsExpr": "res.body.abilities",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -19372,7 +19368,7 @@
               "status": "pass"
             },
             {
-              "uid": "bcx0k8cU6RqQ1YBNgeqLP",
+              "uid": "f_d0N_pWpqZKY2HTGFuaI",
               "lhsExpr": "res.body.types",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -19384,58 +19380,58 @@
             {
               "description": "Status 200 - Pokemon found",
               "status": "pass",
-              "uid": "68uUG5KsGE2jPsmyJwekB"
+              "uid": "3Sc4v-uTa9gnzVp57jg05"
             },
             {
               "description": "Response has id property",
               "status": "pass",
-              "uid": "tfVX4xHK8dhRzSlCSslk0"
+              "uid": "hcWpvk7azDtAXsaIqLjyl"
             },
             {
               "description": "Response has name property",
               "status": "pass",
-              "uid": "0PWdQnxWpvT9Sg-8g2Z__"
+              "uid": "CSIfIjAG2lwuAzaIXOJlK"
             },
             {
               "description": "Response has base experience",
               "status": "pass",
-              "uid": "wLDaM4JVo7Jxa-4PLyukV"
+              "uid": "qmphRqAba-2kxPDQHDC0f"
             },
             {
               "description": "Response has height property",
               "status": "pass",
-              "uid": "kEKoCEOWvMLklGatMQOh7"
+              "uid": "_gViH9dVd00rupxfNy4QV"
             },
             {
               "description": "Response has abilities array",
               "status": "pass",
-              "uid": "2Gmr7zfrTxarrXLhxVjll"
+              "uid": "VHcTpc8IVlkt2pA5_nJKr"
             },
             {
               "description": "Response has types array",
               "status": "pass",
-              "uid": "ydBBNZM7IQE-0fZJdpIqD"
+              "uid": "yatc9e3Sx9vtJ2XWbRgn1"
             },
             {
               "description": "Response has sprites",
               "status": "pass",
-              "uid": "PDkE9kKynEpWU8-aToSeX"
+              "uid": "2N7mdkavumOAQfmqstuiD"
             },
             {
               "description": "Response has stats array",
               "status": "pass",
-              "uid": "Mf9Rb8u54n_qA4DaV_GtH"
+              "uid": "CNWr-hCz6MiR9xbfWZCk8"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "zNxAbF8n2wsvLZMl_xrIL"
+              "uid": "LFm_cARzVqE8zx6X9w-xq"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.508744046,
+          "runDuration": 0.496531846,
           "name": "Get Pokemon by Name",
           "path": "pokemon/get-pokemon",
           "iterationIndex": 0
@@ -19455,33 +19451,33 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:57 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:10 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "260",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"516-5U1ezC7VBo7u3f3KXNmOuIhR/KA\"",
-              "function-execution-id": "1nhd1rd9lvuq",
+              "function-execution-id": "t0jh3zkr9x2s",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "1d0458428893f8a8ea3daba3f4d91d8e",
+              "x-cloud-trace-context": "a8d7cc36da798350571d58e157f8c211",
               "x-country-code": "US",
-              "x-orig-accept-language": "*",
+              "x-orig-accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6,zh;q=0.5",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-bur-kbur8200092-BUR",
+              "x-served-by": "cache-chi-klot8100152-CHI",
               "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1776378077.075752,VS0,VE8",
+              "x-timer": "S1772454306.675187,VS0,VE1",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
-              "age": "82660",
+              "age": "10384",
               "cf-cache-status": "HIT",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=11,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0KDPMheN2S5x3wLhMdv6aZd7bH2bf2d9D3CrfQxwwZwG2KAmlEguqo3vzQoXI6E9dGFo6WWKXlt06xZOUlKTa4TPS8M4ZRbna7i6aGej%2F0JmApVjSzJMxC7%2Bkvz1\"}]}",
-              "cf-ray": "9ede7716f9a1792b-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=7,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7QwMmRzxOV5er8BOf4rvHUWkB4XGZ4DiKD%2B80ydw6pjmzUC1AtNkilmlWEeTpO4oxASePqVM3LNmZ1Biygl%2FuiCqvUY99FNRHcG3nQg1%2Bab%2FoJNTfumQRsU1tS0H\"}]}",
+              "cf-ray": "9ede849bb8a7e811-ORD"
             },
             "data": {
               "count": 21,
@@ -19571,13 +19567,13 @@
               ]
             },
             "url": "https://pokeapi.co/api/v2/type",
-            "responseTime": 56
+            "responseTime": 23
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "W5Rvky4NCmbkNJttvaXAV",
+              "uid": "yq9UJRN_jh6yu1uBywYYn",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -19585,7 +19581,7 @@
               "status": "pass"
             },
             {
-              "uid": "WkUnqqA5ZN0uoDysAgnam",
+              "uid": "OXpPkyuH6mdL9lBGzD1Ij",
               "lhsExpr": "res.body.count",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -19593,7 +19589,7 @@
               "status": "pass"
             },
             {
-              "uid": "0ELbFAT5m9L2YRMA_WwHw",
+              "uid": "XAj6nWEp0g0XtooNJ54h1",
               "lhsExpr": "res.body.results",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -19605,38 +19601,38 @@
             {
               "description": "Status 200 - Successful response",
               "status": "pass",
-              "uid": "6oKWq81ayIMvdYi17tek2"
+              "uid": "xtm9YsLTlUIAoLY_rrdHS"
             },
             {
               "description": "Response has count",
               "status": "pass",
-              "uid": "dD7OwWPH8Mdr2M0LF7Fdm"
+              "uid": "x2dWupzfDqduC-Dgp4jI6"
             },
             {
               "description": "Response has results array",
               "status": "pass",
-              "uid": "fhHHoabvSYrw2UdcrzgmO"
+              "uid": "64Xi1VZgsNhU9QvirN-Sy"
             },
             {
               "description": "Types list is not empty",
               "status": "pass",
-              "uid": "pGye3p2j0niRPUFeMSjTA"
+              "uid": "S8zy-Izl5aXs0QGzHeEhu"
             },
             {
               "description": "Each type has name and url",
               "status": "pass",
-              "uid": "IWXv3ctOEhsqXMYOHnWgU"
+              "uid": "2Tqn4FvMU3N36im2HF6bu"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "G1784dNlOhRlkyc_aQrn3"
+              "uid": "TVXeMxYuH7I6dxutQZaCd"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.133974594,
+          "runDuration": 0.134302548,
           "name": "List Types",
           "path": "type/list-type",
           "iterationIndex": 0
@@ -19656,33 +19652,33 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-              "date": "Fri, 17 Apr 2026 21:18:57 GMT",
+              "date": "Fri, 17 Apr 2026 21:28:10 GMT",
               "content-type": "application/json; charset=utf-8",
               "content-length": "2656",
               "connection": "close",
               "access-control-allow-origin": "*",
               "cache-control": "public, max-age=86400, s-maxage=86400",
               "etag": "W/\"50e0-6ZqB3RCPZ8N/oP+CmBW1JjpDgK4\"",
-              "function-execution-id": "k1zq9ngk8h67",
+              "function-execution-id": "grcy86pe9x7q",
               "server": "cloudflare",
               "strict-transport-security": "max-age=31556926",
-              "x-cloud-trace-context": "59feb16c4445f44249b53349a365e825",
+              "x-cloud-trace-context": "ee29441074e4d3aef0402381620f4597",
               "x-country-code": "US",
-              "x-orig-accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6",
+              "x-orig-accept-language": "es,es-ES;q=0.9,en;q=0.8",
               "x-powered-by": "Express",
               "accept-ranges": "bytes",
-              "x-served-by": "cache-dfw-kdfw8210030-DFW",
+              "x-served-by": "cache-pdk-kfty8610058-PDK",
               "x-cache": "HIT",
               "x-cache-hits": "0",
-              "x-timer": "S1773867727.834299,VS0,VE1",
+              "x-timer": "S1773830346.231557,VS0,VE2",
               "vary": "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
               "alt-svc": "h3=\":443\"; ma=86400",
               "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-              "age": "36288",
+              "age": "4115",
               "cf-cache-status": "HIT",
-              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=12,cfOrigin;dur=0",
-              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=FhSuScWLxu5lFID7DDkSEucdeWZkea4RMPOrVa8xKque4b2unNLZ%2BhFMf7wROhsNKGmMR5rhW5g3iwdWr%2F2hiWx22xypCuUHKkuOtxQSKsBdYCIvS9oSIWkyh9lM\"}]}",
-              "cf-ray": "9ede7717cbec6387-LAX"
+              "server-timing": "cfCacheStatus;desc=\"HIT\", cfEdge;dur=7,cfOrigin;dur=0",
+              "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wh3MwQzy3W2dDGN6UT9vV0fFgDC2MSnRgBwPi5rjPDCUhay6ASxGorZNL04v6aBJQjsIwn0isuO4%2FGfH81pPL3NmrRtmyVqEgk%2FfmGXTFMSBPD%2BFQ4xCZi4yAE04\"}]}",
+              "cf-ray": "9ede849c9c49aa6d-ORD"
             },
             "data": {
               "damage_relations": {
@@ -21012,13 +21008,13 @@
               }
             },
             "url": "https://pokeapi.co/api/v2/type/fire",
-            "responseTime": 54
+            "responseTime": 23
           },
           "error": null,
           "status": "pass",
           "assertionResults": [
             {
-              "uid": "OqGAgh3vmGd2MAif7eFvu",
+              "uid": "9wgVW-plq-KT1UI5YJywT",
               "lhsExpr": "res.status",
               "rhsExpr": "eq 200",
               "rhsOperand": "200",
@@ -21026,7 +21022,7 @@
               "status": "pass"
             },
             {
-              "uid": "rBwIMuEGfWtr6So-7CnJg",
+              "uid": "Yl-dq0eTWo6SK-B8zR1bz",
               "lhsExpr": "res.body.id",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -21034,7 +21030,7 @@
               "status": "pass"
             },
             {
-              "uid": "-QkgApXFCPqNG5vT5iq2f",
+              "uid": "IsBEmkrOP2g7Vb1uZnYMC",
               "lhsExpr": "res.body.name",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -21042,7 +21038,7 @@
               "status": "pass"
             },
             {
-              "uid": "8gT4eUAchOClAmMZdbXMZ",
+              "uid": "BeEOqBvJwB6BPAa1LK6yr",
               "lhsExpr": "res.body.damage_relations",
               "rhsExpr": "isDefined",
               "rhsOperand": "",
@@ -21054,43 +21050,43 @@
             {
               "description": "Status 200 - Type found",
               "status": "pass",
-              "uid": "CH-J6kxSKo8t3pvjZXwN7"
+              "uid": "c28ylIYcnPbY-z8jO-DJH"
             },
             {
               "description": "Response has id",
               "status": "pass",
-              "uid": "knnQSxzV-h_5RuIMTisjZ"
+              "uid": "jc0fZuXIsh2rL7eFXMODc"
             },
             {
               "description": "Response has name",
               "status": "pass",
-              "uid": "5eW6KHhwiDxufW3hsArMV"
+              "uid": "BGHDa-WX_qwFrumqL76TM"
             },
             {
               "description": "Response has damage_relations",
               "status": "pass",
-              "uid": "kPyB1KiD5imntj9plRi6b"
+              "uid": "RvYtK84wy9BqVNCOPVM4W"
             },
             {
               "description": "damage_relations has double_damage_to",
               "status": "pass",
-              "uid": "tEshGwjFf0YGznJBMw38l"
+              "uid": "X-iPDP7GU8hkbTv8_J4Kk"
             },
             {
               "description": "Response has pokemon array",
               "status": "pass",
-              "uid": "ageqwVm04NxwAAdrB1Xwq"
+              "uid": "5tI-xcwFBhFmNS7MBoHZL"
             },
             {
               "description": "Response time is under 3000ms",
               "status": "pass",
-              "uid": "yBWyeE7KvK8NlDCFYff3x"
+              "uid": "jJL_Jwd4sBLwoUkz2NcUh"
             }
           ],
           "preRequestTestResults": [],
           "postResponseTestResults": [],
           "shouldStopRunnerExecution": false,
-          "runDuration": 0.166004867,
+          "runDuration": 0.138727321,
           "name": "Get Type by Name",
           "path": "type/get-type",
           "iterationIndex": 0
