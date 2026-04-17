@@ -50,44 +50,51 @@ jobs:
 
       - name: Run Bruno tests (all)
         if: ${{ github.event.inputs.folder == '' || github.event_name != 'workflow_dispatch' }}
+        working-directory: collections/pokeapi
         run: |
           bru run \
             --env Prod \
-            --reporter-json backend/results/latest.json \
-            --no-bail \
-            collections/pokeapi
+            --reporter-json ../../backend/results/latest.json \
+            --no-bail
         continue-on-error: true
 
       - name: Run Bruno tests (specific folder)
         if: ${{ github.event.inputs.folder != '' && github.event_name == 'workflow_dispatch' }}
+        working-directory: collections/pokeapi
         run: |
           bru run \
             --env Prod \
-            --reporter-json backend/results/latest.json \
+            --reporter-json ../../backend/results/latest.json \
             --no-bail \
-            collections/pokeapi/${{ github.event.inputs.folder }}
+            ${{ github.event.inputs.folder }}
         continue-on-error: true
 
       - name: Generate summary JSON
         run: |
           node -e "
           const fs = require('fs');
-          const raw = JSON.parse(fs.readFileSync('backend/results/latest.json', 'utf8'));
+          let raw = {};
+          try { raw = JSON.parse(fs.readFileSync('backend/results/latest.json', 'utf8')); } catch {}
           const summary = {
             runId: require('crypto').randomUUID(),
             timestamp: new Date().toISOString(),
-            folder: '${{ github.event.inputs.folder }}' || 'all',
-            branch: '${{ github.ref_name }}',
-            commit: '${{ github.sha }}'.slice(0, 7),
+            folder: process.env.FOLDER || 'all',
+            branch: process.env.BRANCH,
+            commit: process.env.COMMIT,
             passed: raw.summary?.passedTestCount ?? 0,
             failed: raw.summary?.failedTestCount ?? 0,
             total: raw.summary?.totalTestCount ?? 0,
             results: raw
           };
           fs.writeFileSync('backend/results/latest.json', JSON.stringify(summary, null, 2));
+          fs.mkdirSync('frontend/public/data', { recursive: true });
           fs.copyFileSync('backend/results/latest.json', 'frontend/public/data/latest.json');
           console.log('Summary:', JSON.stringify({ passed: summary.passed, failed: summary.failed, total: summary.total }));
           "
+        env:
+          FOLDER: ${{ github.event.inputs.folder }}
+          BRANCH: ${{ github.ref_name }}
+          COMMIT: ${{ github.sha }}
 
       - name: Update history JSON
         run: |
