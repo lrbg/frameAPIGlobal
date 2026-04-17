@@ -24,6 +24,9 @@ on:
           - type
           - ability
 
+permissions:
+  contents: write
+
 jobs:
   test:
     name: Run API Tests
